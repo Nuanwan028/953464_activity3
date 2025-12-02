@@ -61,8 +61,20 @@ class _MyHomePageState extends State<MyHomePage> {
                 backgroundColor: const Color.fromARGB(255, 255, 136, 175),
               ),
             ),
-            
-            Image.asset("assets/burger.png", height: 100),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/burger.png", height: 100),
+                SizedBox(width: 20),
+                Image.network(
+                  "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
+                  height: 60,
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+
             priceTextField(),
             amountTextField(),
             calculateButton(),
