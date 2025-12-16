@@ -17,50 +17,43 @@ class _CalculatePageState extends State<CalculatePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text("Calculate"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
+    return ListView(
+      children: [
+        Center(
+          child: Text(
+            "Calculate",
+            style: TextStyle(
+              fontFamily: "maa",
+              fontSize: 48,
+              fontWeight: FontWeight.bold,
+              fontStyle: FontStyle.italic,
+              color: Colors.blueAccent,
+              backgroundColor: const Color.fromARGB(255, 255, 136, 175),
+            ),
+          ),
+        ),
+        SizedBox(height: 20),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              "Calculate",
-              style: TextStyle(
-                fontFamily: "maa",
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                color: Colors.blueAccent,
-                backgroundColor: const Color.fromARGB(255, 255, 136, 175),
-              ),
+            Image.asset("assets/burger.png", height: 100),
+            SizedBox(width: 20),
+            Image.network(
+              "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
+              height: 60,
             ),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset("assets/burger.png", height: 100),
-                SizedBox(width: 20),
-                Image.network(
-                  "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
-                  height: 60,
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-
-            priceTextField(),
-            amountTextField(),
-            calculateButton(),
-            showTotalText(),
-            receiveMoneyTextField(),
-            changeCalculateButton(),
-            showChangeText(),
           ],
         ),
-      ),
+        SizedBox(height: 20),
+
+        priceTextField(),
+        amountTextField(),
+        calculateButton(),
+        Center(child: showTotalText()),
+        receiveMoneyTextField(),
+        changeCalculateButton(),
+        Center(child: showChangeText()),
+      ],
     );
   }
 
