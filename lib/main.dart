@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: 'Kmj Shop',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
-          seedColor: const Color.fromARGB(255, 206, 71, 176),
+          seedColor:  Colors.deepPurple,
         ),
       ),
       home: const MyHomePage(title: 'Calculate Change'),
