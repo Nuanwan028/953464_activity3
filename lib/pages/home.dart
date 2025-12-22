@@ -1,3 +1,4 @@
+import 'package:firstapp/pages/detail.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,27 +15,37 @@ class _HomePageState extends State<HomePage> {
       padding: const EdgeInsets.all(24.0),
       child: ListView(
         children: [
-          MyBox(),
+          MyBox(
+            "What is computer?",
+            "Computer is an electronic device that manipulates information, or data.",
+            "https://cdn.pixabay.com/photo/2022/09/05/18/52/tomato-7434955_1280.jpg",
+          ),
           SizedBox(height: 24),
-          MyBox(),
+          MyBox(
+            "What is Flutter?",
+            "Flutter is an open-source UI software development kit created by Google.",
+            "https://cdn.pixabay.com/photo/2024/02/24/17/37/lemons-8594421_1280.jpg",
+          ),
           SizedBox(height: 24),
-          MyBox(),
+          MyBox(
+            "What is Dart?",
+            "Dart is a programming language designed for building web, server, desktop, and mobile applications.",
+            "https://cdn.pixabay.com/photo/2020/03/11/13/18/food-4922138_1280.jpg",
+          ),
         ],
       ),
     );
   }
 
-  Widget MyBox() {
+  Widget MyBox(String title, String subtitle, String imageUrl) {
     return Container(
       padding: EdgeInsets.all(20),
-      height: 150,
+      height: 175,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 255, 205, 248),
         borderRadius: BorderRadius.circular(20),
         image: DecorationImage(
-          image: NetworkImage(
-            "https://pbs.twimg.com/media/GJ2Y3y7aMAAtMpP.jpg", 
-          ),
+          image: NetworkImage(imageUrl),
           fit: BoxFit.cover,
         ),
       ),
@@ -42,10 +53,26 @@ class _HomePageState extends State<HomePage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text("What is computer", style: TextStyle(fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),),
           Text(
-            "A computer is an electronic device for processing data.",
-            style: TextStyle(fontSize: 15, color: Colors.white),
+            title,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 25,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          SizedBox(height: 10),
+          Text(subtitle, style: TextStyle(color: Colors.white, fontSize: 15)),
+          SizedBox(height: 15),
+          TextButton(
+            onPressed: () {
+              print("Next Page >>");
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DetailsPage()),
+              );
+            },
+            child: Text("read more", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
           ),
         ],
       ),
