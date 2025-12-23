@@ -17,43 +17,47 @@ class _CalculatePageState extends State<CalculatePage> {
 
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        Center(
-          child: Text(
-            "Calculate",
-            style: TextStyle(
-              fontFamily: "maa",
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-              fontStyle: FontStyle.italic,
-              color: Colors.blueAccent,
-              backgroundColor: const Color.fromARGB(255, 255, 136, 175),
+    return Scaffold(
+      // appBar: AppBar(title: const Text("Calculate")),
+      body: ListView(
+        children: [
+          Center(
+            child: Text(
+              "Calculate",
+              style: TextStyle(
+                fontFamily: "maa",
+                fontSize: 48,
+                fontWeight: FontWeight.bold,
+                fontStyle: FontStyle.italic,
+                color: Colors.blueAccent,
+                backgroundColor: const Color.fromARGB(255, 255, 136, 175),
+              ),
             ),
           ),
-        ),
-        SizedBox(height: 20),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset("assets/burger.png", height: 100),
-            SizedBox(width: 20),
-            Image.network(
-              "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
-              height: 60,
-            ),
-          ],
-        ),
-        SizedBox(height: 20),
+          const SizedBox(height: 20),
 
-        priceTextField(),
-        amountTextField(),
-        calculateButton(),
-        Center(child: showTotalText()),
-        receiveMoneyTextField(),
-        changeCalculateButton(),
-        Center(child: showChangeText()),
-      ],
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/burger.png", height: 100),
+              const SizedBox(width: 20),
+              Image.network(
+                "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
+                height: 60,
+              ),
+            ],
+          ),
+
+          const SizedBox(height: 20),
+          priceTextField(),
+          amountTextField(),
+          calculateButton(),
+          Center(child: showTotalText()),
+          receiveMoneyTextField(),
+          changeCalculateButton(),
+          Center(child: showChangeText()),
+        ],
+      ),
     );
   }
 

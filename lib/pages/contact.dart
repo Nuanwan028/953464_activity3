@@ -15,22 +15,20 @@ class _ContactPageState extends State<ContactPage> {
   Widget build(BuildContext context) {
     List mydata = ['apple', 'banana', 'cherry'];
 
-    return Scaffold(
-      body: ListView.builder(
-        itemBuilder: (context, index) {
-          return ListTile(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const CalculatePage()),
-              );
-            },
-            leading: Icon(Icons.apple, color: Colors.pinkAccent),
-            title: Text(mydata[index]),
-          );
-        },
-        itemCount: mydata.length,
-      ),
+    return ListView.builder(
+      itemCount: mydata.length,
+      itemBuilder: (context, index) {
+        return ListTile(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const CalculatePage()),
+            );
+          },
+          leading: const Icon(Icons.apple, color: Colors.pinkAccent),
+          title: Text(mydata[index]),
+        );
+      },
     );
 
     // return ListView(
