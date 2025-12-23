@@ -18,7 +18,7 @@ class _CalculatePageState extends State<CalculatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Calculate")),
+      // appBar: AppBar(title: const Text("Calculate")),
       body: ListView(
         children: [
           Center(

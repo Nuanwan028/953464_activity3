@@ -47,6 +47,10 @@ class _HomePageState extends State<HomePage> {
         image: DecorationImage(
           image: NetworkImage(imageUrl),
           fit: BoxFit.cover,
+          colorFilter: ColorFilter.mode(
+            Colors.black.withOpacity(0.5),
+            BlendMode.darken,
+          ),
         ),
       ),
       child: Column(
@@ -72,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => DetailsPage()),
               );
             },
-            child: Text("read more", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500)),
+            child: Text("read more", style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w500)),
           ),
         ],
       ),
