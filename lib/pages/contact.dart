@@ -25,7 +25,7 @@ class _ContactPageState extends State<ContactPage> {
               MaterialPageRoute(builder: (context) => const CalculatePage()),
             );
           },
-          leading: const Icon(Icons.apple, color: Colors.pinkAccent),
+          leading: const Icon(Icons.apple, color: Colors.deepPurple),
           title: Text(mydata[index]),
         );
       },

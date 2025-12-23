@@ -19,44 +19,47 @@ class _CalculatePageState extends State<CalculatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       // appBar: AppBar(title: const Text("Calculate")),
-      body: ListView(
-        children: [
-          Center(
-            child: Text(
-              "Calculate",
-              style: TextStyle(
-                fontFamily: "maa",
-                fontSize: 48,
-                fontWeight: FontWeight.bold,
-                fontStyle: FontStyle.italic,
-                color: Colors.blueAccent,
-                backgroundColor: const Color.fromARGB(255, 255, 136, 175),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView(
+          children: [
+            Center(
+              child: Text(
+                "Calculate",
+                style: TextStyle(
+                  fontFamily: "maa",
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  fontStyle: FontStyle.italic,
+                  color: const Color.fromARGB(255, 52, 41, 173),
+                  backgroundColor: Colors.indigoAccent.withOpacity(0.3),
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 20),
+            const SizedBox(height: 20),
 
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset("assets/burger.png", height: 100),
-              const SizedBox(width: 20),
-              Image.network(
-                "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
-                height: 60,
-              ),
-            ],
-          ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset("assets/burger.png", height: 100),
+                const SizedBox(width: 20),
+                Image.network(
+                  "https://miro.medium.com/v2/resize:fit:640/format:webp/1*pF-JFaEOEK4wkzaXDyC_ng.gif",
+                  height: 60,
+                ),
+              ],
+            ),
 
-          const SizedBox(height: 20),
-          priceTextField(),
-          amountTextField(),
-          calculateButton(),
-          Center(child: showTotalText()),
-          receiveMoneyTextField(),
-          changeCalculateButton(),
-          Center(child: showChangeText()),
-        ],
+            const SizedBox(height: 20),
+            priceTextField(),
+            amountTextField(),
+            calculateButton(),
+            Center(child: showTotalText()),
+            receiveMoneyTextField(),
+            changeCalculateButton(),
+            Center(child: showChangeText()),
+          ],
+        ),
       ),
     );
   }
@@ -99,6 +102,9 @@ class _CalculatePageState extends State<CalculatePage> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color.fromARGB(255, 233, 230, 248),
+        ),
         onPressed: () {
           if (price.text.isNotEmpty && amount.text.isNotEmpty) {
             setState(() {
@@ -106,7 +112,7 @@ class _CalculatePageState extends State<CalculatePage> {
             });
           }
         },
-        child: Text("Calculate Total"),
+        child: Text("Calculate Total", style: TextStyle(fontWeight: FontWeight.w600)),
       ),
     );
   }
@@ -139,6 +145,9 @@ class _CalculatePageState extends State<CalculatePage> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: const Color.fromARGB(255, 233, 230, 248),
+        ),
         onPressed: () {
           if (change.text.isNotEmpty) {
             double money = double.parse(change.text);
@@ -154,7 +163,7 @@ class _CalculatePageState extends State<CalculatePage> {
             }
           }
         },
-        child: Text("Calculate Change"),
+        child: Text("Calculate Change", style: TextStyle(fontWeight: FontWeight.w600)),
       ),
     );
   }

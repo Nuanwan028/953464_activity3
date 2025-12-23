@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   Widget MyBox(String title, String subtitle, String imageUrl) {
     return Container(
       padding: EdgeInsets.all(20),
-      height: 175,
+      // height: 175,
       decoration: BoxDecoration(
         color: const Color.fromARGB(255, 255, 205, 248),
         borderRadius: BorderRadius.circular(20),
